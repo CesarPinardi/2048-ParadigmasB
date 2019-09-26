@@ -7,10 +7,12 @@ package projeto;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionAdapter;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
@@ -43,6 +45,11 @@ public class DesenharGrid extends JFrame{
             g.setColor(Color.GRAY);
             g.fillRect(0, 0, 800, 600);
             g.setColor(Color.YELLOW);
+            
+            
+            JLabel label1 = new JLabel();
+            label1.setText("Teste");
+            getContentPane().add(label1);
             //x y comprimento largura
             
             for (int i = 100; i <= 400; i+=100) {
@@ -74,10 +81,43 @@ public class DesenharGrid extends JFrame{
                 g.drawRect(400, i, 100, 100);
             }
             
-             
+            Graphics2D g2d = (Graphics2D) g;
+            
+            
+            for (int i = 105; i < 505; i+=100) {                
+                g2d.setColor(Color.yellow);
+                g2d.fillRect(105, i, 90, 90);
+                g2d.setColor(Color.black);
+                
+            }
+          
+            
+            
+            for (int i = 105; i < 505; i+=100) {                
+                g2d.setColor(Color.yellow);
+                g2d.fillRect(205, i, 90, 90);
+            }
+            
+            
+            for (int i = 105; i < 505; i+=100) {                
+                g2d.setColor(Color.yellow);
+                g2d.fillRect(305, i, 90, 90);
+            }
+            
+            
+            for (int i = 105; i < 505; i+=100) {                
+                g2d.setColor(Color.yellow);
+                g2d.fillRect(405, i, 90, 90);
+            }
+            
+            
+            
         }
     }
     
+    /**
+     *
+     */
     public class Mover implements java.awt.event.MouseMotionListener{
 
         @Override
@@ -87,7 +127,7 @@ public class DesenharGrid extends JFrame{
 
         @Override
         public void mouseMoved(MouseEvent me) {
-            System.out.println("Mouse moved");
+            
         }
     
     }
@@ -122,4 +162,11 @@ public class DesenharGrid extends JFrame{
         
     }
     
+    
+   
+        
 }
+       
+
+
+    
